@@ -1,0 +1,5 @@
+/.idea
+.env
+/var
+mysql/data/*
+mongo/data/*

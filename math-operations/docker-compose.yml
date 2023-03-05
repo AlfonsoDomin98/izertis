@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  app:
+    container_name: ${APP_NAME}-app
+    build:
+      context: ${DOCKER_PATH}
+      dockerfile: Dockerfile
+      args:
+        - OS=${OS}
+    ports:
+      - 443:443
+    volumes:
+      - ${PWD}:/var/www/html:delegated
+    environment:
+      - APP_NAME=${APP_NAME}
+      - PHP_OPCACHE_ENABLED=${PHP_OPCACHE_ENABLED}
+      - PUBLIC_FOLDER_NAME=${PUBLIC_FOLDER_NAME}

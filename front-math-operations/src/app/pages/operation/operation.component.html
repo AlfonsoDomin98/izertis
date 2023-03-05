@@ -1,0 +1,24 @@
+
+<section class="align-middle">
+  <div class="card" >
+    <div class="card-body">
+      <h3 class="card-title">Operaciones matemáticas</h3>
+      <h6 class="card-subtitle mb-2 text-muted">Seleccione una operación</h6>
+      <form>
+        <select [(ngModel)]="operations" (change)="changeOperation($event)"  class="form-control" name="operations" ngModel id="">
+          <option selected value="add">Suma</option>
+          <option value="subtract">Resta</option>
+          <option value="multiply">Multiplicación</option>
+          <option value="divide">División</option>
+          <option value="square-root">Raiz Cuadrada</option>
+          <option value="exponential">Exponente</option>
+          <option value="percentage">Porcentaje</option>
+        </select>
+        <input type="number" name="operatorA" [(ngModel)]="operatorA" class="form-control" ngModel placeholder="Operador A" id="operatorA">
+        <input type="number" name="operatorB" [(ngModel)]="operatorB" class="form-control" ngModel placeholder="Operador B" id="operatorB">
+        <button type="button" (click)="getResult()" class="btn btn-success">Calcular</button>
+      </form>
+      <span id="result">{{result}}</span>
+    </div>
+  </div>
+</section>
